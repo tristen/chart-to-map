@@ -1,0 +1,13 @@
+{
+  "name": "xd-to-style",
+  "version": "0.0.0",
+  "description": "Utility for matching Adobe XD layer objects to a Mapbox GL style template.",
+  "main": "index.js",
+  "author": "Mapbox",
+  "license": "ISC",
+  "dependencies": {
+    "extract-zip": "^1.6.6",
+    "lodash": "^4.17.5",
+    "tmp": "0.0.33"
+  }
+}

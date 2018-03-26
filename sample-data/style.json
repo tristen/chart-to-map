@@ -1,0 +1,106 @@
+{
+    "version": 8,
+    "name": "xd-to-style",
+    "metadata": {
+        "mapbox:autocomposite": true,
+        "mapbox:type": "template"
+    },
+    "center": [
+        -78.26294999994059,
+        43.47491683131534
+    ],
+    "zoom": 8.355564003980959,
+    "bearing": 0,
+    "pitch": 0,
+    "sources": {
+        "composite": {
+            "url": "mapbox://mapbox.mapbox-streets-v7",
+            "type": "vector"
+        }
+    },
+    "sprite": "mapbox://sprites/tristen/cjf2kw4dx5zlw2snwr8ndx7zb",
+    "glyphs": "mapbox://fonts/tristen/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "hsla(0, 0%, 100%, 0)"
+            }
+        },
+        {
+            "id": "water",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "water",
+            "filter": [
+                "==",
+                "$type",
+                "Polygon"
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-color": "hsla(0, 0%, 0%, 0)"
+            }
+        },
+        {
+            "id": "admin",
+            "type": "line",
+            "source": "composite",
+            "source-layer": "admin",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": "hsla(0, 0%, 0%, 0)",
+                "line-width": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            8,
+                            1
+                        ],
+                        [
+                            16,
+                            8
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "buildings",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "building",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-color": "hsla(0, 0%, 100%, 0)",
+                "fill-outline-color": "hsl(0, 100%, 0%)"
+            }
+        },
+        {
+            "id": "country-label",
+            "type": "symbol",
+            "source": "composite",
+            "source-layer": "country_label",
+            "layout": {
+                "text-field": "{name}",
+                "text-size": 20
+            },
+            "paint": {
+                "text-color": "hsla(0, 0%, 0%, 0)"
+            }
+        }
+    ],
+    "created": "2018-03-22T13:54:36.305Z",
+    "id": "cjf2kw4dx5zlw2snwr8ndx7zb",
+    "modified": "2018-03-26T16:46:24.718Z",
+    "owner": "tristen",
+    "visibility": "private",
+    "draft": false
+}
