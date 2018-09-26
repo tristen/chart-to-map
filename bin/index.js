@@ -11,7 +11,7 @@ const fs = require('fs');
 const { merge, flattenDeep } = require('lodash');
 
 const { manifestParser } = require('../lib/manifest-parser');
-const { artboardConverter } = require('../lib/artboard-converter');
+const { artboardToStyleLayers } = require('../lib/artboard-to-style-layers');
 
 const cli = meow(`
   ${chalk.bold('Usage')}
@@ -75,7 +75,7 @@ function xdOutput(err) {
   const layersDerivedFromXD = flattenDeep(manifest.artboards.map(d => {
     const json = fs.readFileSync(`${directory.name}/artwork/${d.path}/graphics/graphicContent.agc`, 'utf-8');
     const artboard = JSON.parse(json);
-    return artboard.children.map(artboardConverter);
+    return artboard.children.map(artboardToStyleLayers);
   }));
 
   const newLayers = style.layers.map(layer => {
