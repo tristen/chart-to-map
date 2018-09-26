@@ -5,9 +5,16 @@
   "main": "index.js",
   "author": "Mapbox",
   "license": "ISC",
+  "bin": {
+    "xd2style": "bin/index.js"
+  },
   "dependencies": {
+    "chalk": "^2.4.1",
     "extract-zip": "^1.6.6",
+    "file-extension": "^4.0.5",
     "lodash": "^4.17.5",
+    "meow": "^5.0.0",
+    "strip-extension": "^1.1.0",
     "tmp": "0.0.33"
   }
 }
