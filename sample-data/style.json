@@ -3,12 +3,14 @@
     "name": "xd-to-style",
     "metadata": {
         "mapbox:autocomposite": true,
-        "mapbox:type": "template"
+        "mapbox:type": "template",
+        "mapbox:sdk-support": {
+            "js": "latest",
+            "android": "latest",
+            "ios": "latest"
+        }
     },
-    "center": [
-        -78.26294999994059,
-        43.47491683131534
-    ],
+    "center": [-78.26294999994059, 43.47491683131534],
     "zoom": 8.355564003980959,
     "bearing": 0,
     "pitch": 0,
@@ -18,56 +20,40 @@
             "type": "vector"
         }
     },
-    "sprite": "mapbox://sprites/tristen/cjf2kw4dx5zlw2snwr8ndx7zb",
+    "sprite": "mapbox://sprites/tristen/cjmjoacjb9o492rmpnioalwwn",
     "glyphs": "mapbox://fonts/tristen/{fontstack}/{range}.pbf",
     "layers": [
         {
             "id": "background",
             "type": "background",
-            "paint": {
-                "background-color": "hsla(0, 0%, 100%, 0)"
-            }
+            "paint": {"background-color": "hsla(0, 0%, 100%, 0)"}
         },
         {
             "id": "water",
             "type": "fill",
             "source": "composite",
             "source-layer": "water",
-            "filter": [
-                "==",
-                "$type",
-                "Polygon"
-            ],
-            "layout": {
-                "visibility": "visible"
-            },
-            "paint": {
-                "fill-color": "hsla(0, 0%, 0%, 0)"
-            }
+            "filter": ["==", "$type", "Polygon"],
+            "layout": {"visibility": "visible"},
+            "paint": {"fill-color": "hsla(0, 0%, 0%, 0)"}
         },
         {
             "id": "admin",
             "type": "line",
             "source": "composite",
             "source-layer": "admin",
-            "layout": {
-                "visibility": "visible"
-            },
+            "layout": {"visibility": "visible"},
             "paint": {
                 "line-color": "hsla(0, 0%, 0%, 0)",
-                "line-width": {
-                    "base": 1,
-                    "stops": [
-                        [
-                            8,
-                            1
-                        ],
-                        [
-                            16,
-                            8
-                        ]
-                    ]
-                }
+                "line-width": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    8,
+                    1,
+                    16,
+                    8
+                ]
             }
         },
         {
@@ -75,9 +61,7 @@
             "type": "fill",
             "source": "composite",
             "source-layer": "building",
-            "layout": {
-                "visibility": "visible"
-            },
+            "layout": {"visibility": "visible"},
             "paint": {
                 "fill-color": "hsla(0, 0%, 100%, 0)",
                 "fill-outline-color": "hsl(0, 100%, 0%)"
@@ -89,17 +73,15 @@
             "source": "composite",
             "source-layer": "country_label",
             "layout": {
-                "text-field": "{name}",
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": 20
             },
-            "paint": {
-                "text-color": "hsla(0, 0%, 0%, 0)"
-            }
+            "paint": {"text-color": "hsla(0, 0%, 0%, 0)"}
         }
     ],
-    "created": "2018-03-22T13:54:36.305Z",
-    "id": "cjf2kw4dx5zlw2snwr8ndx7zb",
-    "modified": "2018-03-26T16:46:24.718Z",
+    "created": "2018-09-26T21:39:40.706Z",
+    "id": "cjmjoacjb9o492rmpnioalwwn",
+    "modified": "2018-09-26T21:41:24.646Z",
     "owner": "tristen",
     "visibility": "private",
     "draft": false

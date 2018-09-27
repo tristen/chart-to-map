@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
+    "color": "^3.0.0",
     "extract-zip": "^1.6.6",
     "file-extension": "^4.0.5",
     "lodash": "^4.17.5",
