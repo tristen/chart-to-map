@@ -4,6 +4,7 @@ const commandName = 'xd2style';
 const meow =  require('meow');
 const chalk =  require('chalk');
 const unzip =  require('extract-zip');
+const zipDir = require('zip-dir');
 const fileExtension = require('file-extension');
 const stripExtension = require('strip-extension');
 const tmp = require('tmp');
@@ -131,6 +132,12 @@ function xdOutput(err) {
 
       fs.writeFile(path, JSON.stringify(collection, null, 2), error => {
         if (error) throw new Error(error);
+
+        // TODO This still produces an invalid XD doc
+        // TODO something like `${stripExtension(mbxStyle)}.xd`
+        zipDir(directory.name, { saveTo: `${process.cwd()}/foobar.xd` }, err => {
+          if (err) throw new Error(err);
+        });
       });
     }));
 
