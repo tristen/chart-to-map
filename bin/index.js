@@ -81,7 +81,12 @@ function xdOutput(err) {
     const layersDerivedFromXD = flattenDeep(manifest.artboards.map(d => {
       const json = fs.readFileSync(`${directory.name}/artwork/${d.path}/graphics/graphicContent.agc`, 'utf-8');
       const collection = JSON.parse(json);
-      return collection.children.map(artboardToStyleLayers);
+
+      return collection.children.map(child => {
+        // TODO hack. Make more efficent.
+        child.mapLayers = style.layers;
+        return child;
+      }).map(artboardToStyleLayers);
     }));
 
     const newLayers = style.layers.map(layer => {
