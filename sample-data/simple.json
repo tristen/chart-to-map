@@ -1,0 +1,283 @@
+{
+  "version": 8,
+  "name": "simple",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "template",
+    "mapbox:sdk-support": {
+      "js": "0.49.0",
+      "android": "6.5.0",
+      "ios": "4.4.0"
+    }
+  },
+  "center": [
+    11.621992412619647,
+    47.59996221653313
+  ],
+  "zoom": 4,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "composite": {
+      "url": "mapbox://mapbox.mapbox-streets-v7",
+      "type": "vector"
+    }
+  },
+  "sprite": "mapbox://sprites/slaughternat/cjnbubfno2t442rmdd070zzp6",
+  "glyphs": "mapbox://fonts/slaughternat/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "land",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(0,0,0,0)"
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "water",
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 0%, 77%)"
+      }
+    },
+    {
+      "id": "park",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "landuse",
+      "filter": [
+        "in",
+        "class",
+        "cemetery",
+        "park"
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 0%, 77%)"
+      }
+    },
+    {
+      "id": "landuse",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "landuse",
+      "filter": [
+        "==",
+        "class",
+        "school"
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 0%, 77%)"
+      }
+    },
+    {
+      "id": "admin-country",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "admin",
+      "filter": [
+        "all",
+        [
+          "==",
+          "admin_level",
+          2
+        ],
+        [
+          "==",
+          "maritime",
+          0
+        ]
+      ],
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "road-1",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "road",
+      "filter": [
+        "in",
+        "class",
+        "motorway",
+        "primary",
+        "trunk"
+      ],
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "road-2",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "road",
+      "filter": [
+        "in",
+        "class",
+        "",
+        "secondary",
+        "street",
+        "street_limited",
+        "tertiary"
+      ],
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "ferry-line",
+      "type": "line",
+      "metadata": {},
+      "source": "composite",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "class",
+        "ferry"
+      ],
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "building-outline",
+      "type": "line",
+      "metadata": {},
+      "source": "composite",
+      "source-layer": "building",
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "building-fill",
+      "type": "fill",
+      "metadata": {},
+      "source": "composite",
+      "source-layer": "building",
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "building-inline",
+      "type": "line",
+      "metadata": {},
+      "source": "composite",
+      "source-layer": "building",
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "country-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "country_label",
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ]
+      },
+      "paint": {}
+    },
+    {
+      "id": "place-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "place_label",
+      "filter": [
+        "all",
+        [
+          "<=",
+          "scalerank",
+          4
+        ],
+        [
+          "==",
+          "type",
+          "city"
+        ]
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ]
+      },
+      "paint": {}
+    },
+    {
+      "id": "road-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "road_label",
+      "filter": [
+        "in",
+        "class",
+        "primary",
+        "secondary",
+        "street",
+        "street_limited",
+        "tertiary"
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "symbol-placement": "line",
+        "text-font": [
+          "DINNeuGroBolCon Regular",
+          "Arial Unicode MS Regular"
+        ]
+      },
+      "paint": {}
+    },
+    {
+      "id": "ferry-line-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "road_label",
+      "filter": [
+        "==",
+        "class",
+        "ferry"
+      ],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          [
+            "get",
+            "name_en"
+          ],
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "symbol-placement": "line",
+        "text-font": [
+          "DINNeuGroBolCon Regular",
+          "Arial Unicode MS Regular"
+        ]
+      },
+      "paint": {}
+    }
+  ],
+  "created": "2018-10-16T14:46:01.830Z",
+  "id": "cjnbubfno2t442rmdd070zzp6",
+  "modified": "2018-10-16T15:19:15.465Z",
+  "owner": "slaughternat",
+  "visibility": "private",
+  "draft": false
+}
