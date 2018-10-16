@@ -30,7 +30,9 @@
       "id": "land",
       "type": "background",
       "paint": {
-        "background-color": "rgba(0,0,0,0)"
+        "background-color": "rgba(0,0,0,0)",
+        "fill-color": "rgb(255, 255, 255)",
+        "fill-outline-color": "rgb(112, 112, 112)"
       }
     },
     {
@@ -40,7 +42,7 @@
       "source-layer": "water",
       "layout": {},
       "paint": {
-        "fill-color": "hsl(0, 0%, 77%)"
+        "fill-color": "rgb(180, 199, 209)"
       }
     },
     {
@@ -56,7 +58,7 @@
       ],
       "layout": {},
       "paint": {
-        "fill-color": "hsl(0, 0%, 77%)"
+        "fill-color": "rgb(217, 221, 197)"
       }
     },
     {
@@ -71,7 +73,7 @@
       ],
       "layout": {},
       "paint": {
-        "fill-color": "hsl(0, 0%, 77%)"
+        "fill-color": "rgb(234, 234, 234)"
       }
     },
     {
@@ -93,7 +95,82 @@
         ]
       ],
       "layout": {},
-      "paint": {}
+      "paint": {
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          "rgb(128, 128, 128)",
+          1,
+          "rgb(128, 128, 128)",
+          11,
+          "rgb(128, 128, 128)",
+          10,
+          "rgb(128, 128, 128)",
+          5,
+          "rgb(128, 128, 128)",
+          7,
+          "rgb(128, 128, 128)",
+          8,
+          "rgb(128, 128, 128)",
+          4,
+          "rgb(128, 128, 128)",
+          6,
+          "rgb(128, 128, 128)",
+          12,
+          "rgb(128, 128, 128)",
+          13,
+          "rgb(128, 128, 128)",
+          14,
+          "rgb(128, 128, 128)",
+          15,
+          "rgb(128, 128, 128)",
+          16,
+          "rgb(128, 128, 128)"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          1.7999999523162842,
+          1,
+          0.5,
+          11,
+          2,
+          10,
+          2,
+          5,
+          1,
+          7,
+          1.399999976158142,
+          8,
+          1.600000023841858,
+          4,
+          0.75,
+          6,
+          1.2000000476837158,
+          12,
+          2,
+          13,
+          2,
+          14,
+          2,
+          15,
+          2,
+          16,
+          2
+        ]
+      }
     },
     {
       "id": "road-1",
@@ -108,7 +185,62 @@
         "trunk"
       ],
       "layout": {},
-      "paint": {}
+      "paint": {
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          "rgb(186, 186, 56)",
+          9,
+          "rgb(186, 186, 56)",
+          10,
+          "rgb(186, 186, 56)",
+          11,
+          "rgb(186, 186, 56)",
+          12,
+          "rgb(186, 186, 56)",
+          13,
+          "rgb(186, 186, 56)",
+          14,
+          "rgb(186, 186, 56)",
+          15,
+          "rgb(186, 186, 56)",
+          16,
+          "rgb(186, 186, 56)"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          1,
+          9,
+          1.5,
+          10,
+          2,
+          11,
+          2.5,
+          12,
+          3,
+          13,
+          3.5,
+          14,
+          4,
+          15,
+          4.5,
+          16,
+          5
+        ]
+      }
     },
     {
       "id": "road-2",
@@ -125,7 +257,42 @@
         "tertiary"
       ],
       "layout": {},
-      "paint": {}
+      "paint": {
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          "rgb(213, 213, 168)",
+          11,
+          "rgb(213, 213, 168)",
+          12,
+          "rgb(213, 213, 168)",
+          13,
+          "rgb(213, 213, 168)"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          1,
+          11,
+          1.5,
+          12,
+          1.5,
+          13,
+          2
+        ]
+      }
     },
     {
       "id": "ferry-line",
@@ -139,7 +306,10 @@
         "ferry"
       ],
       "layout": {},
-      "paint": {}
+      "paint": {
+        "line-color": "rgb(62, 108, 132)",
+        "line-width": 1
+      }
     },
     {
       "id": "building-outline",
@@ -148,7 +318,10 @@
       "source": "composite",
       "source-layer": "building",
       "layout": {},
-      "paint": {}
+      "paint": {
+        "fill-color": "rgb(0, 0, 0)",
+        "fill-outline-color": "rgb(140, 134, 126)"
+      }
     },
     {
       "id": "building-fill",
@@ -157,7 +330,9 @@
       "source": "composite",
       "source-layer": "building",
       "layout": {},
-      "paint": {}
+      "paint": {
+        "fill-color": "rgb(234, 234, 234)"
+      }
     },
     {
       "id": "building-inline",
@@ -166,7 +341,10 @@
       "source": "composite",
       "source-layer": "building",
       "layout": {},
-      "paint": {}
+      "paint": {
+        "fill-color": "rgb(0, 0, 0)",
+        "fill-outline-color": "rgb(140, 134, 126)"
+      }
     },
     {
       "id": "country-label",
@@ -180,9 +358,68 @@
             "get",
             "name"
           ]
+        ],
+        "text-font": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "literal",
+            [
+              "Roboto Mono Light Italic"
+            ]
+          ],
+          9,
+          [
+            "literal",
+            [
+              "Roboto Mono Light Italic"
+            ]
+          ]
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          1,
+          12,
+          9,
+          32
+        ],
+        "text-line-height": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          1,
+          15,
+          9,
+          15
         ]
       },
-      "paint": {}
+      "paint": {
+        "text-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          1,
+          "rgb(43, 43, 43)",
+          9,
+          "rgb(43, 43, 43)"
+        ]
+      }
     },
     {
       "id": "place-label",
@@ -209,9 +446,68 @@
             "get",
             "name"
           ]
+        ],
+        "text-font": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "literal",
+            [
+              "Roboto Mono Regular"
+            ]
+          ],
+          16,
+          [
+            "literal",
+            [
+              "Roboto Mono Regular"
+            ]
+          ]
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          14,
+          16,
+          30
+        ],
+        "text-line-height": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          15,
+          16,
+          15
         ]
       },
-      "paint": {}
+      "paint": {
+        "text-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          "rgb(35, 54, 76)",
+          16,
+          "rgb(35, 54, 76)"
+        ]
+      }
     },
     {
       "id": "road-label",
@@ -237,11 +533,66 @@
         ],
         "symbol-placement": "line",
         "text-font": [
-          "DINNeuGroBolCon Regular",
-          "Arial Unicode MS Regular"
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "literal",
+            [
+              "DINNeuGroBolCon Regular"
+            ]
+          ],
+          20,
+          [
+            "literal",
+            [
+              "DINNeuGroBolCon Regular"
+            ]
+          ]
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          10,
+          20,
+          15
+        ],
+        "text-line-height": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          null,
+          20,
+          null
         ]
       },
-      "paint": {}
+      "paint": {
+        "text-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          "rgb(77, 77, 78)",
+          20,
+          "rgb(77, 77, 78)"
+        ]
+      }
     },
     {
       "id": "ferry-line-label",
@@ -267,11 +618,66 @@
         ],
         "symbol-placement": "line",
         "text-font": [
-          "DINNeuGroBolCon Regular",
-          "Arial Unicode MS Regular"
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "literal",
+            [
+              "DINNeuGroBolCon Regular"
+            ]
+          ],
+          20,
+          [
+            "literal",
+            [
+              "DINNeuGroBolCon Regular"
+            ]
+          ]
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          10,
+          20,
+          15
+        ],
+        "text-line-height": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          null,
+          20,
+          null
         ]
       },
-      "paint": {}
+      "paint": {
+        "text-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          "rgb(25, 78, 122)",
+          20,
+          "rgb(25, 78, 122)"
+        ]
+      }
     }
   ],
   "created": "2018-10-16T14:46:01.830Z",
