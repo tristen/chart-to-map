@@ -1,0 +1,200 @@
+{
+  "version": 8,
+  "name": "xd-to-style",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "template",
+    "mapbox:sdk-support": {
+      "js": "latest",
+      "android": "latest",
+      "ios": "latest"
+    }
+  },
+  "center": [
+    -78.26294999994059,
+    43.47491683131534
+  ],
+  "zoom": 8.355564003980959,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "composite": {
+      "url": "mapbox://mapbox.mapbox-streets-v7",
+      "type": "vector"
+    }
+  },
+  "sprite": "mapbox://sprites/tristen/cjmjoacjb9o492rmpnioalwwn",
+  "glyphs": "mapbox://fonts/tristen/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgb(251, 199, 156)"
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "water",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          3,
+          "rgb(234, 238, 253)",
+          6,
+          "rgb(160, 174, 237)",
+          9,
+          "rgb(16, 54, 227)"
+        ]
+      }
+    },
+    {
+      "id": "admin",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "admin",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          8,
+          "rgb(35, 54, 76)",
+          16,
+          "rgb(251, 255, 0)"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear",
+            1
+          ],
+          [
+            "zoom"
+          ],
+          8,
+          1,
+          16,
+          40
+        ]
+      }
+    },
+    {
+      "id": "buildings",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "building",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgb(252, 251, 219)",
+        "fill-outline-color": "rgb(212, 210, 49)"
+      }
+    },
+    {
+      "id": "country-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "country_label",
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          3,
+          36,
+          5,
+          28
+        ],
+        "text-font": [
+          "step",
+          [
+            "zoom"
+          ],
+          [
+            "literal",
+            [
+              "Open Sans Bold"
+            ]
+          ],
+          5,
+          [
+            "literal",
+            [
+              "Open Sans Regular"
+            ]
+          ]
+        ],
+        "text-line-height": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          3,
+          15,
+          5,
+          15
+        ]
+      },
+      "paint": {
+        "text-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          3,
+          "rgb(35, 54, 76)",
+          5,
+          "rgb(35, 54, 76)"
+        ]
+      }
+    }
+  ],
+  "created": "2018-09-26T21:39:40.706Z",
+  "id": "cjmjoacjb9o492rmpnioalwwn",
+  "modified": "2018-09-26T21:41:24.646Z",
+  "owner": "tristen",
+  "visibility": "private",
+  "draft": false
+}
