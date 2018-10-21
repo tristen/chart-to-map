@@ -1,0 +1,348 @@
+{
+  "version": 8,
+  "name": "simple",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "template",
+    "mapbox:sdk-support": {
+      "js": "0.49.0",
+      "android": "6.5.0",
+      "ios": "4.4.0"
+    }
+  },
+  "center": [
+    11.621992412619647,
+    47.59996221653313
+  ],
+  "zoom": 4,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "composite": {
+      "url": "mapbox://mapbox.mapbox-streets-v7",
+      "type": "vector"
+    }
+  },
+  "sprite": "mapbox://sprites/tristen/cjncfypib1me42sqm3vf1kzib",
+  "glyphs": "mapbox://fonts/tristen/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "land",
+      "type": "background",
+      "paint": {
+        "background-color": "#707070"
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "water",
+      "layout": {},
+      "paint": {
+        "fill-color": "#b4c7d1"
+      }
+    },
+    {
+      "id": "park",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "landuse",
+      "filter": [
+        "in",
+        "class",
+        "cemetery",
+        "park"
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 0%, 77%)"
+      }
+    },
+    {
+      "id": "landuse",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "landuse",
+      "filter": [
+        "==",
+        "class",
+        "school"
+      ],
+      "layout": {},
+      "paint": {
+        "fill-color": "hsl(0, 0%, 77%)"
+      }
+    },
+    {
+      "id": "admin-country",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "admin",
+      "filter": [
+        "all",
+        [
+          "==",
+          "admin_level",
+          2
+        ],
+        [
+          "==",
+          "maritime",
+          0
+        ]
+      ],
+      "layout": {},
+      "paint": {
+        "line-color": "gray",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          0.75,
+          6,
+          1.2,
+          7,
+          1.4,
+          8,
+          1.6,
+          9,
+          1.8
+        ]
+      }
+    },
+    {
+      "id": "road-1",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "road",
+      "filter": [
+        "in",
+        "class",
+        "motorway",
+        "primary",
+        "trunk"
+      ],
+      "layout": {},
+      "paint": {
+        "line-color": "#baba38",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          1.5,
+          10,
+          2,
+          11,
+          2.5,
+          12,
+          3,
+          13,
+          3.5,
+          14,
+          4,
+          15,
+          4.5,
+          16,
+          5
+        ]
+      }
+    },
+    {
+      "id": "road-2",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "road",
+      "filter": [
+        "in",
+        "class",
+        "",
+        "secondary",
+        "street",
+        "street_limited",
+        "tertiary"
+      ],
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "ferry-line",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "class",
+        "ferry"
+      ],
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "building-outline",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "building",
+      "layout": {},
+      "paint": {
+        "line-color": "#8c867e",
+        "line-width": 1.25
+      }
+    },
+    {
+      "id": "building-fill",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "building",
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "building-inline",
+      "type": "line",
+      "source": "composite",
+      "source-layer": "building",
+      "layout": {},
+      "paint": {}
+    },
+    {
+      "id": "country-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "country_label",
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-font": [
+          "Robot o Mono Light"
+        ]
+      },
+      "paint": {
+        "text-color": "#2b2b2b"
+      }
+    },
+    {
+      "id": "place-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "place_label",
+      "filter": [
+        "all",
+        [
+          "<=",
+          "scalerank",
+          4
+        ],
+        [
+          "==",
+          "type",
+          "city"
+        ]
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          14,
+          16,
+          30
+        ]
+      },
+      "paint": {}
+    },
+    {
+      "id": "road-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "road_label",
+      "filter": [
+        "in",
+        "class",
+        "primary",
+        "secondary",
+        "street",
+        "street_limited",
+        "tertiary"
+      ],
+      "layout": {
+        "text-field": [
+          "to-string",
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "symbol-placement": "line",
+        "text-font": [
+          "DINNeuGroBolCon Regular",
+          "Arial Unicode MS Regular"
+        ]
+      },
+      "paint": {}
+    },
+    {
+      "id": "ferry-line-label",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "road_label",
+      "filter": [
+        "==",
+        "class",
+        "ferry"
+      ],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          [
+            "get",
+            "name_en"
+          ],
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "symbol-placement": "line",
+        "text-font": [
+          "DINNeuGroBolCon Regular",
+          "Arial Unicode MS Regular"
+        ]
+      },
+      "paint": {}
+    }
+  ],
+  "created": "2018-10-17T00:51:59.580Z",
+  "id": "cjncfypib1me42sqm3vf1kzib",
+  "modified": "2018-10-17T00:51:59.580Z",
+  "owner": "tristen",
+  "visibility": "private",
+  "draft": false
+}

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Minimo_Taxonomy_Chart_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 1074 1409" style="enable-background:new 0 0 1074 1409;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#194E7A;}
+	.st1{font-family:'DINNeuGroBolCon';}
+	.st2{font-size:15px;}
+	.st3{font-size:10px;}
+	.st4{fill:#4D4D4E;}
+	.st5{fill:#505050;}
+	.st6{font-family:'CeraPRO-Regular';}
+	.st7{font-size:12px;}
+	.st8{fill:#23364C;}
+	.st9{font-family:'CeraPRO-Bold';}
+	.st10{font-size:16px;}
+	.st11{fill:none;stroke:#8C867E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st12{fill:#EAEAEA;}
+	.st13{fill:none;stroke:#8C867E;stroke-width:1.25;stroke-miterlimit:10;}
+	.st14{fill:#D9DDC5;}
+	.st15{fill:#707070;}
+	.st16{fill:#B4C7D1;}
+	.st17{font-family:'RobotoMono-Regular';}
+	.st18{font-size:30px;}
+	.st19{font-size:14px;}
+	.st20{fill:#2B2B2B;}
+	.st21{font-family:'RobotoMono-Light';}
+	.st22{opacity:0.6;fill:none;stroke:#3E6C84;enable-background:new    ;}
+	.st23{opacity:0.6;fill:none;stroke:#D5D5A8;stroke-width:2;enable-background:new    ;}
+	.st24{opacity:0.6;fill:none;stroke:#D5D5A8;stroke-width:1.5;enable-background:new    ;}
+	.st25{opacity:0.6;fill:none;stroke:#D5D5A8;enable-background:new    ;}
+	.st26{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:5;enable-background:new    ;}
+	.st27{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:4.5;enable-background:new    ;}
+	.st28{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:4;enable-background:new    ;}
+	.st29{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:3.5;enable-background:new    ;}
+	.st30{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:3;enable-background:new    ;}
+	.st31{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:2.5;enable-background:new    ;}
+	.st32{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:2;enable-background:new    ;}
+	.st33{opacity:0.6;fill:none;stroke:#BABA38;stroke-width:1.5;enable-background:new    ;}
+	.st34{opacity:0.6;fill:none;stroke:#BABA38;enable-background:new    ;}
+	.st35{letter-spacing:1;}
+	.st36{opacity:0.6;fill:none;stroke:#808080;stroke-width:2;enable-background:new    ;}
+	.st37{opacity:0.6;fill:none;stroke:#808080;stroke-width:1.8;enable-background:new    ;}
+	.st38{opacity:0.6;fill:none;stroke:#808080;stroke-width:1.6;enable-background:new    ;}
+	.st39{opacity:0.6;fill:none;stroke:#808080;stroke-width:1.4;enable-background:new    ;}
+	.st40{opacity:0.6;fill:none;stroke:#808080;stroke-width:1.2;enable-background:new    ;}
+	.st41{opacity:0.6;fill:none;stroke:#808080;enable-background:new    ;}
+	.st42{opacity:0.6;fill:none;stroke:#808080;stroke-width:0.75;enable-background:new    ;}
+	.st43{opacity:0.6;fill:none;stroke:#808080;stroke-width:0.5;enable-background:new    ;}
+	.st44{font-size:42px;}
+	.st45{letter-spacing:42;}
+	.st46{fill:none;stroke:#23364C;}
+</style>
+<g id="Transit_labels">
+	<text id="ferry-line-label_x5F__x5F_20" transform="matrix(1 0 0 1 898.977 1245.535)" class="st0 st1 st2">LIGNE M1</text>
+	<text id="ferry-line-label_x5F__x5F_9" transform="matrix(1 0 0 1 785.354 1245.535)" class="st0 st1 st3">LIGNE M1</text>
+	<text id="road-label_x5F__x5F_20" transform="matrix(1 0 0 1 895.558 1221.83)" class="st4 st1 st2">RUE MUZY</text>
+	<text id="road-label_x5F__x5F_9" transform="matrix(1 0 0 1 784.23 1221.83)" class="st4 st1 st3">RUE MUZY</text>
+	<g id="Chart_components_5_">
+		<text transform="matrix(1 0 0 1 914.226 1195)" class="st5 st6 st7">z20</text>
+		<text transform="matrix(1 0 0 1 796.97 1195)" class="st5 st6 st7">z9</text>
+		<text transform="matrix(1 0 0 1 663.51 1245.535)" class="st5 st6 st7">FERRY</text>
+		<text transform="matrix(1 0 0 1 664.638 1221.83)" class="st5 st6 st7">ROAD</text>
+		<text transform="matrix(1 0 0 1 737.232 1128)" class="st8 st9 st10">TRANSIT LABELS</text>
+	</g>
+</g>
+<g id="Buildings">
+	<line id="building-inline" class="st11" x1="192.2" y1="1181" x2="192.2" y2="1230"/>
+	<line id="building-inline-2" class="st11" x1="260.3" y1="1181" x2="260.3" y2="1207.7"/>
+	<line id="building-inline-3" class="st11" x1="232" y1="1181" x2="232" y2="1207.7"/>
+	<line id="building-inline-4" class="st11" x1="288.6" y1="1181" x2="288.6" y2="1215.8"/>
+	<line id="building-inline-5" class="st11" x1="346.8" y1="1197" x2="346.8" y2="1181"/>
+	<line id="building-inline-6" class="st11" x1="346.8" y1="1215.8" x2="346.8" y2="1206.4"/>
+	<line id="building-inline-7" class="st11" x1="327.4" y1="1181" x2="327.4" y2="1215.8"/>
+	<line id="building-inline-8" class="st11" x1="308" y1="1198.4" x2="308" y2="1181"/>
+	<line id="building-inline-9" class="st11" x1="308" y1="1207.7" x2="308" y2="1215.8"/>
+	<path id="building-fill_x5F__x5F_all" class="st12" d="M346.8,1181H177v49h15.2v17.8H232v13.2h49.6v-53.3h7v8.1h77.6V1181H346.8z
+		 M224.3,1222.5h-25.2v-20.2h25.1v20.2H224.3z M266,1240h-11.7v10.1h-16.7v-14.8H232v-27.6h8.4v14.6H266V1240z M275.1,1198.4v3.9
+		h-11.5v-2.9h-3.3v-5h14.8V1198.4z M324.4,1207.6h-24.7v-0.8h-4.6v3.4h-4.2v-11.9h2.1v-2.5h8.4v2.5h14.2v-1.6h8.8L324.4,1207.6z
+		 M357.6,1206.4h-14.8v4.8h-9.2v-8.1h5.6v-6.1h18.4L357.6,1206.4z"/>
+	<line id="building-inline_x5F__x5F_all" class="st11" x1="281.6" y1="1207.7" x2="240.4" y2="1207.7"/>
+	<path id="building-outline_x5F__x5F_all" class="st13" d="M346.8,1181H177v49h15.2v17.8H232v13.2h49.6v-53.3h7v8.1h77.6V1181H346.8
+		z M224.3,1222.5h-25.2v-20.2h25.1v20.2H224.3z M266,1240h-11.7v10.1h-16.7v-14.8H232v-27.6h8.4v14.6H266V1240z M275.1,1198.4v3.9
+		h-11.5v-2.9h-3.3v-5h14.8V1198.4z M324.4,1207.6h-24.7v-0.8h-4.6v3.4h-4.2v-11.9h2.1v-2.5h8.4v2.5h14.2v-1.6h8.8L324.4,1207.6z
+		 M357.6,1206.4h-14.8v4.8h-9.2v-8.1h5.6v-6.1h18.4L357.6,1206.4z"/>
+	<g id="Chart_components_4_">
+		<text transform="matrix(1 0 0 1 230.992 1128)" class="st8 st9 st10">BUILDINGS</text>
+	</g>
+</g>
+<g id="Landuse">
+	<path id="landuse_x5F__x5F_all" class="st12" d="M881,906h80v80h-80V906z"/>
+	<path id="cemetery-2" class="st14" d="M760,906h80v80h-80V906z"/>
+	<path id="park_x5F__x5F_all" class="st14" d="M636,906h80v80h-80V906z"/>
+	<path id="land_x5F__x5F_all" class="st15" d="M817.5,759.5v79h79v-79H817.5 M817,759h80v80h-80V759z"/>
+	<path id="water_x5F__x5F_all" class="st16" d="M701,759h80v80h-80V759z"/>
+	<g id="Chart_components_3_">
+		<text transform="matrix(1 0 0 1 897.726 1004)" class="st8 st6 st7">LANDUSE</text>
+		<text transform="matrix(1 0 0 1 771.084 1004)" class="st8 st6 st7">CEMETERY</text>
+		<text transform="matrix(1 0 0 1 663.534 1004)" class="st8 st6 st7">PARK</text>
+		<text transform="matrix(1 0 0 1 843.574 866)" class="st8 st6 st7">LAND</text>
+		<text transform="matrix(1 0 0 1 720.942 866)" class="st8 st6 st7">WATER</text>
+		<text transform="matrix(1 0 0 1 743.112 682)" class="st8 st9 st10">LAND &amp; WATER</text>
+	</g>
+</g>
+<g id="Place_labels">
+	<text id="place-label_x5F__x5F_16" transform="matrix(1 0 0 1 329 1000)" class="st8 st17 st18">GENEVE</text>
+	<text id="place-label_x5F__x5F_4" transform="matrix(1 0 0 1 110 995)" class="st8 st17 st19">GENEVE</text>
+	<text id="country-label_x5F__x5F_9" transform="matrix(1 0 0 1 113.871 807)" class="st20 st21 st7">SUISSE</text>
+	<g id="Chart_components_2_">
+		<text transform="matrix(1 0 0 1 374.696 934)" class="st8 st6 st7">z16</text>
+		<text transform="matrix(1 0 0 1 128.988 934)" class="st8 st6 st7">z4</text>
+		<text transform="matrix(1 0 0 1 376.97 748)" class="st8 st6 st7">z9</text>
+		<text transform="matrix(1 0 0 1 130.002 748)" class="st8 st6 st7">z1</text>
+		<text transform="matrix(1 0 0 1 168.56 682)" class="st8 st9 st10">POLITICAL &amp; PLACE LABELS</text>
+	</g>
+</g>
+<g id="Transit_systems">
+	<path id="ferry-line" class="st22" d="M961.7,582.9l44-0.2"/>
+	<path id="ferry-line-2" class="st22" d="M906.3,582.9l44-0.2"/>
+	<path id="ferry-line-3" class="st22" d="M850.9,582.9l44-0.2"/>
+	<path id="ferry-line-4" class="st22" d="M795.5,582.9l44-0.2"/>
+	<path id="ferry-line-5" class="st22" d="M740.1,582.9l44-0.2"/>
+	<path id="ferry-line-6" class="st22" d="M684.6,582.9l44-0.2"/>
+	<path id="ferry-line-7" class="st22" d="M629.2,582.9l44-0.2"/>
+	<path id="ferry-line-8" class="st22" d="M573.8,582.9l44-0.2"/>
+	<path id="ferry-line_x5F__x5F_8" class="st22" d="M518.4,582.9l44-0.2"/>
+	<path id="road-2-2" class="st23" d="M961.7,550.9l44-0.2"/>
+	<path id="road-2-3" class="st23" d="M906.3,550.9l44-0.2"/>
+	<path id="road-2-4" class="st23" d="M850.9,550.9l44-0.2"/>
+	<path id="road-2_x5F__x5F_13" class="st23" d="M795.5,550.9l44-0.2"/>
+	<path id="road-2_x5F__x5F_12" class="st24" d="M740.1,550.9l44-0.2"/>
+	<path id="road-2_x5F__x5F_11" class="st24" d="M684.6,550.9l44-0.2"/>
+	<path id="road-2-5" class="st25" d="M629.2,550.9l44-0.2"/>
+	<path id="road-2-6" class="st25" d="M573.8,550.9l44-0.2"/>
+	<path id="road-2-7" class="st25" d="M518.4,550.9l44-0.2"/>
+	<path id="road-2-8" class="st25" d="M463,550.9l44-0.2"/>
+	<path id="road-2-9" class="st25" d="M407.6,550.9l44-0.2"/>
+	<path id="road-2_x5F__x5F_5" class="st25" d="M352.2,550.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_16" class="st26" d="M961.7,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_15" class="st27" d="M906.3,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_14" class="st28" d="M850.9,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_13" class="st29" d="M795.5,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_12" class="st30" d="M740.1,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_11" class="st31" d="M684.6,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_10" class="st32" d="M629.2,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_9" class="st33" d="M573.8,517.9l44-0.2"/>
+	<path id="road-1-2" class="st34" d="M518.4,517.9l44-0.2"/>
+	<path id="road-1-3" class="st34" d="M463,517.9l44-0.2"/>
+	<path id="road-1-4" class="st34" d="M407.6,517.9l44-0.2"/>
+	<path id="road-1_x5F__x5F_5" class="st34" d="M352.2,517.9l44-0.2"/>
+	<g id="Chart_components">
+		<text transform="matrix(1 0 0 1 973.271 491)" class="st8 st6 st7">z16</text>
+		<text transform="matrix(1 0 0 1 917.833 491)" class="st8 st6 st7">z15</text>
+		<text transform="matrix(1 0 0 1 862.461 491)" class="st8 st6 st7">z14</text>
+		<text transform="matrix(1 0 0 1 807.474 491)" class="st8 st6 st7">z13</text>
+		<text transform="matrix(1 0 0 1 752.294 491)" class="st8 st6 st7">z12</text>
+		<text transform="matrix(1 0 0 1 697.7 491)" class="st8 st6 st7">z11</text>
+		<text transform="matrix(1 0 0 1 641.136 491)" class="st8 st6 st7">z10</text>
+		<text transform="matrix(1 0 0 1 587.848 490)" class="st8 st6 st7">z9</text>
+		<text transform="matrix(1 0 0 1 533.005 490)" class="st8 st6 st7">z8</text>
+		<text transform="matrix(1 0 0 1 478.053 491)" class="st8 st6 st7">z7</text>
+		<text transform="matrix(1 0 0 1 422.339 490)" class="st8 st6 st7">z6</text>
+		<text transform="matrix(1 0 0 1 367.268 490)" class="st8 st6 st7">z5</text>
+		<text transform="matrix(1 0 0 1 312.263 490)" class="st8 st6 st7">z4</text>
+		<text transform="matrix(1 0 0 1 256.909 491)" class="st8 st6 st7">z3</text>
+		<text transform="matrix(1 0 0 1 201.362 490)" class="st8 st6 st7">z2</text>
+		<text transform="matrix(1 0 0 1 146.769 490)" class="st8 st6 st7">z1</text>
+		<text transform="matrix(1 0 0 1 457.912 455)" class="st8 st9 st10 st35">TRANSIT SYSTEMS</text>
+		<text transform="matrix(1 0 0 1 68.02 587)" class="st5 st6 st7">FERRY</text>
+		<text transform="matrix(1 0 0 1 59.524 555)" class="st5 st6 st7">ROAD-2</text>
+		<text transform="matrix(1 0 0 1 61.696 522)" class="st5 st6 st7">ROAD-1</text>
+	</g>
+</g>
+<g id="Administrative_boundaries">
+	<path id="admin-country__16" class="st36" d="M961.7,358.9l44-0.2"/>
+	<path id="admin-country__15" class="st36" d="M906.3,358.9l44-0.2"/>
+	<path id="admin-country_x5F__x5F_14" class="st36" d="M850.9,358.9l44-0.2"/>
+	<path id="admin-country__13" class="st36" d="M795.5,358.9l44-0.2"/>
+	<path id="admin-country__12" class="st36" d="M740.1,358.9l44-0.2"/>
+	<path id="admin-country__11" class="st36" d="M684.6,358.9l44-0.2"/>
+	<path id="admin-country_x5F__x5F_10" class="st36" d="M629.2,358.9l44-0.2"/>
+	<path id="admin-country__9" class="st37" d="M573.8,358.9l44-0.2"/>
+	<path id="admin-country__8" class="st38" d="M518.4,358.9l44-0.2"/>
+	<path id="admin-country_x5F__x5F_7" class="st39" d="M463,358.9l44-0.2"/>
+	<path id="admin-country__6" class="st40" d="M407.6,358.9l44-0.2"/>
+	<path id="admin-country__5" class="st41" d="M352.2,358.9l44-0.2"/>
+	<path id="admin-country_x5F__x5F_4" class="st42" d="M296.7,358.9l44-0.2"/>
+	<path id="admin-country_3" class="st43" d="M241.3,358.9l44-0.2"/>
+	<path id="admin-country_2" class="st43" d="M185.9,358.9l44-0.2"/>
+	<path id="admin-country_x5F__x5F_1" class="st43" d="M130.5,358.9l44-0.2"/>
+	<g id="Chart_components_1_">
+		<text transform="matrix(1 0 0 1 46.936 363)" class="st5 st6 st7">COUNTRY</text>
+		<text transform="matrix(1 0 0 1 402.648 296)" class="st8 st9 st10 st35">ADMINISTRATIVE BOUNDARIES</text>
+		<text transform="matrix(1 0 0 1 973.271 332)" class="st8 st6 st7">z16</text>
+		<text transform="matrix(1 0 0 1 917.833 332)" class="st8 st6 st7">z15</text>
+		<text transform="matrix(1 0 0 1 862.461 332)" class="st8 st6 st7">z14</text>
+		<text transform="matrix(1 0 0 1 807.474 332)" class="st8 st6 st7">z13</text>
+		<text transform="matrix(1 0 0 1 752.294 332)" class="st8 st6 st7">z12</text>
+		<text transform="matrix(1 0 0 1 697.7 332)" class="st8 st6 st7">z11</text>
+		<text transform="matrix(1 0 0 1 641.136 332)" class="st8 st6 st7">z10</text>
+		<text transform="matrix(1 0 0 1 587.848 331)" class="st8 st6 st7">z9</text>
+		<text transform="matrix(1 0 0 1 533.005 331)" class="st8 st6 st7">z8</text>
+		<text transform="matrix(1 0 0 1 478.053 332)" class="st8 st6 st7">z7</text>
+		<text transform="matrix(1 0 0 1 422.339 331)" class="st8 st6 st7">z6</text>
+		<text transform="matrix(1 0 0 1 367.268 331)" class="st8 st6 st7">z5</text>
+		<text transform="matrix(1 0 0 1 312.263 331)" class="st8 st6 st7">z4</text>
+		<text transform="matrix(1 0 0 1 256.909 332)" class="st8 st6 st7">z3</text>
+		<text transform="matrix(1 0 0 1 201.362 331)" class="st8 st6 st7">z2</text>
+		<text transform="matrix(1 0 0 1 146.769 331)" class="st8 st6 st7">z1</text>
+	</g>
+</g>
+<g id="Global_chart_components">
+	<text transform="matrix(1 0 0 1 361.986 141)" class="st8 st9 st44 st45">SIMPLE</text>
+	<path id="chart-division-line" class="st46" d="M38,403.2h995.6"/>
+	<path id="chart-division-line-2" class="st46" d="M38,633.2h995.6"/>
+	<path id="chart-division-line-3" class="st46" d="M38,238.2h995.6"/>
+	<path id="chart-division-line-4" class="st46" d="M38,1073.2h469.7"/>
+	<path id="chart-division-line-5" class="st46" d="M38,871.2h469.7"/>
+	<path id="chart-division-line-6" class="st46" d="M38,1309.2h469.7"/>
+	<path id="chart-division-line-7" class="st46" d="M563.9,1073.2h469.7"/>
+	<path id="chart-division-line-8" class="st46" d="M563.9,1310.2h469.7"/>
+</g>
+</svg>

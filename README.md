@@ -1,14 +1,36 @@
-xd-to-style
+chart-to-map
 ---
 
-Utility for matching Adobe XD layer objects to a Mapbox GL style template.
-See video demoing it in action: [https://vimeo.com/261860280](https://vimeo.com/261860280).
+Utility for matching SVG layers to Mapbox GL style templates.
+
+![demo](https://i.imgur.com/WBWy822.gif)
 
 ### Installation
 
 **Prerequisite**: Node 6 (or higher)
 
-### Setup & Usage
+```sh
+git clone git@github.com:mapbox/chart-to-map
+cd chart-to-map
+npm link
+```
+
+### Usage
+
+```sh
+Usage
+    $ chart2map --from <input> --to <input>
+
+  Options
+    --from, -f  Provide a from input. This is where changes will be read from. Must be a SVG file or Mapbox style template.
+    --to, -t  Provide a to input. This is where changes will updated on. Must be a SVG file or Mapbox style template.
+
+  Examples
+    $ chart2map --from foo.svg --to style.json
+    $ chart2map --from style.json --to foo.svg
+```
+
+### Setup
 
 There's some initial setup for this to work:
 
@@ -16,7 +38,7 @@ There's some initial setup for this to work:
 doesn't need to be styled but it does need to have layers pointing to the 
 sources required.
 
-- **An XD file** The file can have any number of arbitrary objects. The only 
+- **An SVG file** The file can have any number of arbitrary objects. The only 
 layers the converter cares about are layers with names matching layer names
 in the style, followed by double underscore, followed by either `all` to
 represent all layers or a number to represent what zoom stop the style should
@@ -25,10 +47,3 @@ be applied on. Here's a couple examples:
     - background__all
     - water__2
     - water__12
-
-The command to convert looks like this:
-
-    ./index.js input.xd style.json 
-
-If it returns nicely, a file named `xd_style.json` will have been created in 
-directory the command ran from.

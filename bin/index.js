@@ -1,32 +1,50 @@
 #!/usr/bin/env node
 
-const commandName = 'xd2style';
+const COMMAND = 'chart2map';
+
 const meow =  require('meow');
 const chalk =  require('chalk');
-const unzip =  require('extract-zip');
-const zipDir = require('zip-dir');
 const fileExtension = require('file-extension');
 const stripExtension = require('strip-extension');
-const tmp = require('tmp');
+const svgson = require('svgson-next').default
+const { stringify } = require('svgson-next');
+const SVGO = require('svgo');
 const fs = require('fs');
-const { merge, flattenDeep } = require('lodash');
+const { flattenDeep } = require('lodash');
 
 const { parseName } = require('../lib/parse-name');
-const { manifestParser } = require('../lib/manifest-parser');
-const { artboardToStyleLayers } = require('../lib/artboard-to-style-layers');
-const { mapElementToStyleLayer } = require('../lib/map-element-to-style-layer');
+const { svgjsonToStyleLayers } = require('../lib/svgjson-to-style-layers');
+const { styleLayersToSvgjson } = require('../lib/style-layers-to-svgjson');
+
+const inlineStylesPreserveId = require('../svgo/inline-styles-preserve-id');
+const convertStyleToAttrs = require('../svgo/convert-style-to-attrs');
+const cleanIllustratorIds = require('../svgo/clean-illustrator-ids');
+
+const svgo = new SVGO({
+  plugins : [
+    // Custom
+    { inlineStylesPreserveId },
+    { convertStyleToAttrs },
+    { cleanIllustratorIds },
+
+    // Default
+    {
+      inlineStyles: false
+    }
+  ]
+});
 
 const cli = meow(`
   ${chalk.bold('Usage')}
-    $ ${commandName} --from <input> --to <input>
+    $ ${COMMAND} --from <input> --to <input>
 
   ${chalk.bold('Options')}
-    --from, -f  Provide a from input. This is where changes will be read from. Must be a Adobe XD file or Mapbox style template.
-    --to, -t  Provide a to input. This is where changes will updated on. Must be a Adobe XD file or Mapbox style template.
+    --from, -f  Provide a from input. This is where changes will be read from. Must be a SVG file or Mapbox style template.
+    --to, -t  Provide a to input. This is where changes will updated on. Must be a SVG file or Mapbox style template.
 
   ${chalk.bold('Examples')}
-    $ ${commandName} --from foo.xd --to foo.json
-    $ ${commandName} --from foo.json --to foo.xd
+    $ ${COMMAND} --from foo.svg --to style.json
+    $ ${COMMAND} --from style.json --to foo.svg
 `, {
   flags: {
     from: {
@@ -43,111 +61,103 @@ const cli = meow(`
 const { from, to } = cli.flags;
 
 if (!from) {
-  console.log('A --from input must be provided.');
+  console.log(`${chalk.yellow('A --from input must be provided.')}`);
   cli.showHelp();
 }
 
 if (!to) {
-  console.log('A --to input must be provided.');
+  console.log(`${chalk.yellow('A --to input must be provided.')}`);
   cli.showHelp();
 }
 
-let xdFile;
+let svgFile;
 let mbxStyle;
 
-if (fileExtension(from) === 'xd') xdFile = from;
+if (fileExtension(from) === 'svg') svgFile = from;
 if (fileExtension(from) === 'json') mbxStyle = from;
-if (fileExtension(to) === 'xd') xdFile = to;
+if (fileExtension(to) === 'svg') svgFile = to;
 if (fileExtension(to) === 'json') mbxStyle = to;
 
-// Create a temp directory to dump unzipped .xd contents in.
-const directory = tmp.dirSync();
-unzip(xdFile, {
-  dir: directory.name
-}, xdOutput);
-
+// Get the map style json
 const style = JSON.parse(fs.readFileSync(mbxStyle, 'utf-8'));
 
-function xdOutput(err) {
-  if (err) {
-    return console.log(err);
+// Get the svg as json
+svgo.optimize(fs.readFileSync(svgFile, 'utf-8'))
+  .then(result => svgson(result.data))
+  .then(svgCleanOutput)
+  .catch(err => {
+    console.log(err);
+    console.log(`${chalk.red(`Error reading SVG: ${err.message}`)}`);
+    cli.showHelp();
+});
+
+// Collect all the attribute objects from children arrays and 
+// flatten the result.
+function traverse(node, path = [], result = []) {
+  if (!node.children.length) {
+    result.push(path.concat(node.attributes));
   }
 
-  const manifest = manifestParser(directory);
+  for (const child of node.children) {
+    traverse(child, path.concat(node.attributes), result);
+  }
 
-  if (fileExtension(from) === 'xd') {
-    // We are reading from an XD file and weriting to a style template.
+  return flattenDeep(result);
+}
 
-    const layersDerivedFromXD = flattenDeep(manifest.artboards.map(d => {
-      const json = fs.readFileSync(`${directory.name}/artwork/${d.path}/graphics/graphicContent.agc`, 'utf-8');
-      const collection = JSON.parse(json);
+function walk(children) {
+  return children.map(child => {
+    if (child.attributes && child.attributes.id) {
+      const { id } = parseName(child.attributes.id);
+      const matchingStyleLayer = style.layers.find(l => l.id === id);
 
-      return collection.children.map(child => {
-        // TODO hack. Make more efficent.
-        child.mapLayers = style.layers;
-        return child;
-      }).map(artboardToStyleLayers);
-    }));
+      if (matchingStyleLayer) {
+        child.attributes = styleLayersToSvgjson(matchingStyleLayer, child.attributes);
+      }
+    }
+
+    if (child.children.length) {
+      walk(child.children);
+    }
+
+    return child;
+  });
+}
+
+function svgCleanOutput(svgJson) {
+  // console.log(JSON.stringify(childAttributes, null, 2));
+
+  if (fileExtension(from) === 'svg') {
+    const childAttributes = traverse(svgJson);
 
     const newLayers = style.layers.map(layer => {
       const { id } = layer;
-      const found = layersDerivedFromXD.find(d => d.id === id);
 
-      if (found) {
-        return merge(layer, found);
-      } else {
-        return layer;
-      }
+      const attributesToApply = childAttributes
+        .filter(attr => (attr.id && parseName(attr.id).id === id))
+        .sort((a, b) => (parseName(a.id).zoom - parseName(b.id).zoom));
+
+      return attributesToApply.length 
+        ? svgjsonToStyleLayers(attributesToApply, layer)
+        : layer;
     });
 
     style.layers = newLayers;
 
-    fs.writeFile(`${stripExtension(xdFile)}.json`, JSON.stringify(style, null, 2), error => {
-      if (error) throw new Error(error);
+    fs.writeFile(`${stripExtension(svgFile)}.json`, JSON.stringify(style, null, 2), e => {
+      if (e) throw new Error(e);
     });
+
   } else if (fileExtension(from) === 'json') {
 
-    // 1. Locate each artboard.
-    // 2. Within each child element locate its equivalent style layer
-    // 3. Update that child element
-    // 4. Write the finished result back to the .agc file.
+    svgJson.children = walk(svgJson.children);
 
-    flattenDeep(manifest.artboards.map(d => {
-      const path = `${directory.name}/artwork/${d.path}/graphics/graphicContent.agc`;
-      const collection = JSON.parse(fs.readFileSync(path, 'utf-8'));
-
-      collection.children = collection.children.map(c => {
-        return c.artboard.children.map(element => {
-          const { name, valid } = parseName(element);
-
-          if (valid) {
-            // Retrieve the equivalent style layer for this artboard element.
-            const matchingLayer = style.layers.find(l => l.id === name);
-
-            if (!matchingLayer) {
-              return element;
-            } else {
-              return mapElementToStyleLayer(element, matchingLayer);
-            }
-          }
-
-          return element;
-        });
-      });
-
-      fs.writeFile(path, JSON.stringify(collection, null, 2), error => {
-        if (error) throw new Error(error);
-
-        // TODO This still produces an invalid XD doc
-        // TODO something like `${stripExtension(mbxStyle)}.xd`
-        zipDir(directory.name, { saveTo: `${process.cwd()}/foobar.xd` }, err => {
-          if (err) throw new Error(err);
-        });
-      });
-    }));
+    fs.writeFile(`${stripExtension(mbxStyle)}.svg`, stringify(svgJson), e => {
+      if (e) throw new Error(e);
+    });
 
   } else {
-    console.log('A valid --from input must be provided.');
+    console.log(`${chalk.red('A valid --from input must be provided.')}`);
     cli.showHelp();
   }
 }
