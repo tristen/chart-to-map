@@ -3,8 +3,6 @@ chart-to-map
 
 Utility for matching SVG layers to Mapbox GL style templates.
 
-![](https://i.imgur.com/WBWy822.gif)
-
 ### Installation
 
 **Prerequisite**: Node 6 (or higher)
